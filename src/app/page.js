@@ -45,11 +45,11 @@ const workProjects = [
 // Personal projects
 const personalProjects = [
   {
-    title: "Side Project",
-    description: "A fun weekend project exploring new tech",
-    link: "https://example.com/sideproject",
-    src: "locomotive.png",
-    color: "#EFE8D3"
+    title: "mm food",
+    description: "Tiny, cute app for analysing restaurant menus for dietary restrictions using AI.",
+    link: "https://mmfood.app",
+    src: "mmfood.png",
+    color: "#F1E9D6"
   },
   {
     title: "Open Source",
