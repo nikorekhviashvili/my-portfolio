@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './style.module.css';
 
-export default function index({index, title, description, link, onHover, headingLevel = 'h2'}) {
+export default function Project({index, title, description, link, onHover, headingLevel = 'h2'}) {
     const Heading = headingLevel;
     const router = useRouter();
     const [isActive, setIsActive] = useState(false);
