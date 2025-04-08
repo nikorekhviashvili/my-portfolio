@@ -2,12 +2,15 @@
 import React from 'react'
 import styles from './style.module.css';
 
-export default function index({index, title, setModal}) {
-
+export default function index({index, title, description, link, onHover, headingLevel = 'h2'}) {
+    const Heading = headingLevel;
+    
     return (
-        <div onMouseEnter={() => {setModal({active: true, index})}} onMouseLeave={() => {setModal({active: false, index})}} className={styles.project}>
-            <h2>{title}</h2>
-            <p>Design & Development</p>
-        </div>
+        <a href={link} className={styles.project} 
+           onMouseEnter={() => onHover(true, index)} 
+           onMouseLeave={() => onHover(false, index)}>
+            <Heading className={styles.projectTitle}>{title}</Heading>
+            <p>{description}</p>
+        </a>
     )
 }
