@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
+    padding-left: 2rem;
     border-top: 1px solid rgba(14, 56, 177, 0.2);
     cursor: pointer;
     transition: all 0.2s;
@@ -48,17 +49,31 @@
 @media (max-width: 768px) {
     .project {
         padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .projectTitle {
         font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        padding-left: 1rem;
     }
 
     .project p {
         font-size: 1rem;
+        padding-left: 1rem;
+        opacity: 1;
     }
 
     .project:hover{
-        padding-left: 1.5rem;
+        padding-left: 1rem;
+    }
+
+    .project:hover .projectTitle {
+        transform: none;
+    }
+
+    .project:hover p {
+        transform: none;
     }
 }
