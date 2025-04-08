@@ -7,21 +7,41 @@ import Modal from '../components/modal';
 // Work projects
 const workProjects = [
   {
-    title: "Project One",
-    description: "A client project for a major brand",
-    link: "https://example.com/project1",
-    src: "c2montreal.png",
+    title: "Ride Pingo",
+    description: "Rider app built for cities to launch their own ride pooling services.",
+    link: "https://ridepingo.com/",
+    src: "RidePingo1.jpeg",
     color: "#000000"
   },
   {
-    title: "Project Two",
-    description: "Website redesign for a tech company",
-    link: "https://example.com/project2",
-    src: "officestudio.png", 
-    color: "#8C8C8C"
+    title: "Drive Pingo",
+    description: "Driver app designed for on-demand public transportation.",
+    link: "https://theroutingcompany.com/drive-pingo",
+    src: "DrivePingo.png", 
+    color: "#15D602"
   },
+  {
+    title: "Pingo Flex",
+    description: "Visual building tool to enable building fixed transit routes.",
+    link: "https://theroutingcompany.com/newsroom/pingoflexupdate",
+    src: "output.webp",
+    color: "#EFE8D3"
+  },
+  {
+    title: "Pingo Journey",
+    description: "Comprehensive journey planner combining Transit and On-demand options.",
+    link: "https://theroutingcompany.com/pingo-journey",
+    src: "Pingo Journey.gif",
+    color: "#232423"
+  },
+  {
+    title: "Ride Bounce",
+    description: "Cheap and convenient ride pooling. Built specifically for students..",
+    link: "https://apps.apple.com/us/app/ride-bounce/id6740990514",
+    src: "Ride Bounce.png",
+    color: "#15D602"
+  }
 ];
-
 // Personal projects
 const personalProjects = [
   {
