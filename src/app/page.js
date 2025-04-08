@@ -113,7 +113,7 @@ export default function Home() {
         
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Work</h2>
-          <p className={styles.sectionSubtitle}>These are some of the highlighted projects I've worked on in my career. Mostly from my current role at The Routing Company as a head of product. </p>
+          <p className={styles.sectionSubtitle}>These are some of the highlighted projects I&apos;ve worked on in my career. Mostly from my current role at The Routing Company as a head of product. </p>
           <div className={styles.projectList}>
             {workProjects.map((project, index) => (
               <Project 
