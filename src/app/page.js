@@ -52,30 +52,30 @@ const personalProjects = [
     color: "#F1E9D6"
   },
   {
-    title: "Open Source",
-    description: "Contributions to the dev community",
-    link: "https://example.com/opensource",
-    src: "silencio.png",
-    color: "#706D63"
+    title: "GTFS.fyi",
+    description: "Free tool to visualize GTFS data fully in browser - both static and real-time.",
+    link: "https://www.gtfs.fyi/",
+    src: "gtfs-fyi.png",
+    color: "#15D602"
   },
+  {
+    title: "Tunetales",
+    description: "Check your Spotify listening history and get beautiful visualizations of your music taste.",
+    link: "https://tunetales.xyz",
+    src: "tunetales.png",
+    color: "#DA5B3F"
+  }
 ];
 
 // Music projects
 const musicProjects = [
   {
-    title: "My Album",
-    description: "First album release on Spotify",
-    link: "https://spotify.com",
-    src: "c2montreal.png",
-    color: "#1DB954" // Spotify green
-  },
-  {
-    title: "Music Video",
-    description: "Official music video on YouTube",
-    link: "https://youtube.com",
-    src: "officestudio.png",
-    color: "#FF0000" // YouTube red
-  },
+    title: "Self-titled",
+    description: "First 3 tracks released on Soundcloud. All recorded in summer 2024.",
+    link: "https://soundcloud.com/niko-rekhviashvili-532643644/sets/self-titled?si=ceae68cdb1b94203add12d5829662b06&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+    src: "easter.png",
+    color: "#FFD200" 
+  }
 ];
 
 // Blog articles
@@ -149,7 +149,7 @@ export default function Home() {
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Music</h2>
-          <p className={styles.sectionSubtitle}>My musical creations</p>
+          <p className={styles.sectionSubtitle}>Some of my music that I have been not embarrassed to share publicly. More coming soon!</p>
           <div className={styles.projectList}>
             {musicProjects.map((project, index) => (
               <Project 
@@ -165,7 +165,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.section}>
+        {/* <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Blog</h2>
           <p className={styles.sectionSubtitle}>Articles and thoughts</p>
           <div className={styles.projectList}>
@@ -181,7 +181,10 @@ export default function Home() {
               />
             ))}
           </div>
-        </section>
+        </section> */}
+        <footer className={styles.footer}>
+          <p>Get in touch: <a href="mailto:niko.rekhviashvili@gmail.com">niko.rekhviashvili@gmail.com</a></p>
+        </footer>
       </div>
       <Modal modal={modal} projects={modal.projects || []}/>
     </main>
