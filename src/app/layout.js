@@ -1,5 +1,6 @@
 import './globals.css'
 import { Nunito_Sans } from 'next/font/google'
+import { Analytics } from "@vercel/analytics/react"
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
@@ -16,7 +17,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={nunitoSans.className}>{children}</body>
+      <body className={nunitoSans.className}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
