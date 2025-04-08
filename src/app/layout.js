@@ -17,19 +17,19 @@ const baseUrl = process.env.NODE_ENV === 'production'
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
-  title: 'Niko Rekhviashvili | Portfolio',
-  description: 'Product Manager & Builder. Explore my work, projects, and music.',
+  title: "Niko's personal site",
+  description: "My personal website showcasing some cool products I have built and some of my music that I have been not embarrassed to share publicly.",
   openGraph: {
-    title: 'Niko Rekhviashvili | Portfolio',
-    description: 'Product Manager & Builder. Explore my work, projects, and music.',
+    title: "Niko's personal site",
+    description: "My personal website showcasing some cool products I have built and some of my music that I have been not embarrassed to share publicly.",
     url: baseUrl,
-    siteName: 'Niko Rekhviashvili Portfolio',
+    siteName: "Niko's personal site",
     images: [
       {
         url: `/images/officestudio.png`, // Relative path to the image in /public
         width: 980, // Provide image dimensions for better rendering
         height: 980, // You might need to adjust these if they are incorrect
-        alt: 'Niko Rekhviashvili Portfolio Preview',
+        alt: "Niko's personal site preview",
       },
     ],
     locale: 'en_US',
@@ -38,8 +38,8 @@ export const metadata = {
   // Optional: Add Twitter specific tags if needed
   twitter: {
     card: 'summary_large_image',
-    title: 'Niko Rekhviashvili | Portfolio',
-    description: 'Product Manager & Builder. Explore my work, projects, and music.',
+    title: "Niko's personal site",
+    description: "My personal website showcasing some cool products I have built and some of my music that I have been not embarrassed to share publicly.",
     // creator: '@yourTwitterHandle', // Add your Twitter handle if you have one
     images: [`${baseUrl}/images/officestudio.png`], // Must be an absolute URL
   },
