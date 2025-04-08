@@ -131,7 +131,7 @@ export default function Home() {
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Personal Projects</h2>
-          <p className={styles.sectionSubtitle}>Side projects and experiments</p>
+          <p className={styles.sectionSubtitle}>Side projects and experiments I have been building in my free time with codegen AI tools.</p>
           <div className={styles.projectList}>
             {personalProjects.map((project, index) => (
               <Project 
