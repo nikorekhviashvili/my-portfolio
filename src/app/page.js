@@ -70,10 +70,10 @@ const personalProjects = [
 // Music projects
 const musicProjects = [
   {
-    title: "Self-titled",
+    title: "Easter",
     description: "First 3 tracks released on Soundcloud. All recorded in summer 2024.",
     link: "https://soundcloud.com/niko-rekhviashvili-532643644/sets/self-titled?si=ceae68cdb1b94203add12d5829662b06&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-    src: "easter.png",
+    src: "Easter.png",
     color: "#FFD200" 
   }
 ];
