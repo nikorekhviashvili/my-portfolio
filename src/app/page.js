@@ -98,9 +98,17 @@ const blogArticles = [
 
 export default function Home() {
   const [modal, setModal] = useState({active: false, index: 0, category: '', projects: []});
+  // Mobile accordion state: tracks which project is expanded (category-index format)
+  const [mobileExpanded, setMobileExpanded] = useState(null);
 
   const handleProjectHover = (active, index, category, projects) => {
     setModal({active, index, category, projects});
+  };
+
+  const handleMobileExpand = (category, index) => {
+    const key = `${category}-${index}`;
+    // Accordion: toggle current, close others
+    setMobileExpanded(prev => prev === key ? null : key);
   };
 
   return (
@@ -116,12 +124,16 @@ export default function Home() {
           <p className={styles.sectionSubtitle}>These are some of the highlighted projects I&apos;ve worked on in my career. Mostly from my current role at The Routing Company as a head of product. </p>
           <div className={styles.projectList}>
             {workProjects.map((project, index) => (
-              <Project 
+              <Project
                 key={`work-${index}`}
-                index={index} 
-                title={project.title} 
+                index={index}
+                title={project.title}
                 description={project.description}
                 link={project.link}
+                src={project.src}
+                category="work"
+                isExpanded={mobileExpanded === `work-${index}`}
+                onMobileExpand={handleMobileExpand}
                 onHover={(active) => handleProjectHover(active, index, 'work', workProjects)}
                 headingLevel="h3"
               />
@@ -134,12 +146,16 @@ export default function Home() {
           <p className={styles.sectionSubtitle}>Side projects and experiments I have been building in my free time with codegen AI tools.</p>
           <div className={styles.projectList}>
             {personalProjects.map((project, index) => (
-              <Project 
+              <Project
                 key={`personal-${index}`}
-                index={index} 
-                title={project.title} 
+                index={index}
+                title={project.title}
                 description={project.description}
                 link={project.link}
+                src={project.src}
+                category="personal"
+                isExpanded={mobileExpanded === `personal-${index}`}
+                onMobileExpand={handleMobileExpand}
                 onHover={(active) => handleProjectHover(active, index, 'personal', personalProjects)}
                 headingLevel="h3"
               />
@@ -152,12 +168,16 @@ export default function Home() {
           <p className={styles.sectionSubtitle}>Some of my music that I have been not embarrassed to share publicly. More coming soon!</p>
           <div className={styles.projectList}>
             {musicProjects.map((project, index) => (
-              <Project 
+              <Project
                 key={`music-${index}`}
-                index={index} 
-                title={project.title} 
+                index={index}
+                title={project.title}
                 description={project.description}
                 link={project.link}
+                src={project.src}
+                category="music"
+                isExpanded={mobileExpanded === `music-${index}`}
+                onMobileExpand={handleMobileExpand}
                 onHover={(active) => handleProjectHover(active, index, 'music', musicProjects)}
                 headingLevel="h3"
               />
