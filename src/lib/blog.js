@@ -25,7 +25,7 @@ export function getAllPosts() {
         slug,
         title: data.title || slug,
         description: data.description || '',
-        date: data.date || '',
+        date: data.date ? (data.date instanceof Date ? data.date.toISOString().split('T')[0] : data.date) : '',
         image: data.image || null,
         color: data.color || '#0E38B1',
       };
@@ -65,7 +65,7 @@ export async function getPostBySlug(slug) {
     slug,
     title: data.title || slug,
     description: data.description || '',
-    date: data.date || '',
+    date: data.date ? (data.date instanceof Date ? data.date.toISOString().split('T')[0] : data.date) : '',
     image: data.image || null,
     color: data.color || '#0E38B1',
     content: contentHtml,
