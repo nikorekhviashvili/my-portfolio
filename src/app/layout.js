@@ -2,6 +2,7 @@ import './globals.css'
 import { Nunito_Sans } from 'next/font/google'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import ThemeToggle from '../components/theme-toggle'
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
@@ -47,8 +48,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function getTheme() {
+                  const stored = localStorage.getItem('theme');
+                  if (stored) return stored;
+                  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', getTheme());
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={nunitoSans.className}>
+        <ThemeToggle />
         {children}
         <Analytics />
         <SpeedInsights />
