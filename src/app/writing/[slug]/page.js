@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getAllPostSlugs, getPostBySlug, isBlogEnabled } from '../../../lib/blog';
+import { getAllPostSlugs, getPostBySlug } from '../../../lib/blog';
 import styles from './post.module.css';
 import Subscribe from '../../../components/subscribe';
 
@@ -24,11 +24,6 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function PostPage({ params }) {
-  // Hide in production
-  if (!isBlogEnabled()) {
-    notFound();
-  }
-
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
