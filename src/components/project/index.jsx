@@ -59,6 +59,16 @@ export default function Project({
         }
     };
 
+    // Extract domain from URL for display
+    const getDomain = (url) => {
+        try {
+            const hostname = new URL(url).hostname;
+            return hostname.replace('www.', '');
+        } catch {
+            return 'Visit';
+        }
+    };
+
     return (
         <div className={styles.projectWrapper}>
             <div
@@ -97,7 +107,7 @@ export default function Project({
                             className={styles.visitButton}
                             onClick={handleVisitClick}
                         >
-                            Visit →
+                            {getDomain(link)} →
                         </button>
                     </div>
                 </div>
