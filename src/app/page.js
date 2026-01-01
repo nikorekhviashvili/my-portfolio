@@ -1,8 +1,14 @@
 'use client';
 import styles from './page.module.css'
 import { useState } from 'react';
+import Link from 'next/link';
 import Project from '../components/project';
 import Modal from '../components/modal';
+
+// Show writing section in dev/preview only (Vercel sets NEXT_PUBLIC_VERCEL_ENV automatically)
+const showWriting = process.env.NODE_ENV === 'development' ||
+  process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ||
+  process.env.NEXT_PUBLIC_VERCEL_ENV === 'development';
 
 // Work projects
 const workProjects = [
@@ -185,23 +191,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Blog</h2>
-          <p className={styles.sectionSubtitle}>Articles and thoughts</p>
-          <div className={styles.projectList}>
-            {blogArticles.map((project, index) => (
-              <Project 
-                key={`blog-${index}`}
-                index={index} 
-                title={project.title} 
-                description={project.description}
-                link={project.link}
-                onHover={(active) => handleProjectHover(active, index, 'blog', blogArticles)}
-                headingLevel="h3"
-              />
-            ))}
-          </div>
-        </section> */}
+        {showWriting && (
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Writing</h2>
+            <p className={styles.sectionSubtitle}>Articles and thoughts.</p>
+            <div className={styles.writingLink}>
+              <Link href="/writing" className={styles.viewAll}>
+                View all posts →
+              </Link>
+            </div>
+          </section>
+        )}
+
         <footer className={styles.footer}>
           <p>Get in touch: <a href="mailto:niko.rekhviashvili@gmail.com">niko.rekhviashvili@gmail.com</a></p>
         </footer>
