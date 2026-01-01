@@ -1,0 +1,263 @@
+{
+  "main": {
+    "id": "4e9e7d9fbb643d92",
+    "type": "split",
+    "children": [
+      {
+        "id": "e27369ae85383d9f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3f71a72eb8143a88",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/content/blog/template/_template.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "_template"
+            }
+          },
+          {
+            "id": "89a3bfeba7bc48d9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/content/blog/Hello World.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Hello World"
+            }
+          },
+          {
+            "id": "1e5b9f2d778fa374",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CLAUDE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CLAUDE"
+            }
+          },
+          {
+            "id": "c2fcfa98398dcf44",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3c8faae9276f869e",
+    "type": "split",
+    "children": [
+      {
+        "id": "cdfd21619e262344",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "afb6521723cb0991",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "aabee5556c24ea42",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "20cb310734dfda1f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "362cb0ee3efddcb3",
+    "type": "split",
+    "children": [
+      {
+        "id": "eccd6d7cf4695753",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "47a6a389ee145714",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "src/content/blog/Hello World.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Hello World"
+            }
+          },
+          {
+            "id": "7e184bb3790a6a41",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "src/content/blog/Hello World.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Hello World"
+            }
+          },
+          {
+            "id": "9afaf42f266efb2f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "483cb606d8e26655",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "63e6009c8950f870",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "src/content/blog/Hello World.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Hello World"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "afb6521723cb0991",
+  "lastOpenFiles": [
+    "src/content/blog/Hello World.md",
+    "src/content/blog/template",
+    "src/content/blog/template/_template.md",
+    "CLAUDE.md",
+    "src/content/blog/drafts/Ideas for the blog.md",
+    "templates/Blog Post.md",
+    "templates",
+    "src/content/blog/drafts",
+    "node_modules/micromark-core-commonmark/lib/thematic-break.d.ts",
+    "node_modules/micromark-core-commonmark/dev/lib/thematic-break.d.ts",
+    "node_modules/micromark-core-commonmark/lib/setext-underline.d.ts",
+    "node_modules/micromark-core-commonmark/dev/lib/setext-underline.d.ts",
+    "node_modules/micromark-core-commonmark/lib/list.d.ts",
+    "node_modules/micromark-core-commonmark/dev/lib/list.d.ts",
+    "node_modules/micromark-core-commonmark/lib/line-ending.d.ts",
+    "node_modules/micromark-core-commonmark/readme.md",
+    "node_modules/mdast-util-to-markdown/readme.md",
+    "node_modules/mdast-util-to-hast/readme.md",
+    "node_modules/micromark/readme.md",
+    "node_modules/hast-util-to-html/readme.md",
+    "node_modules/hast-util-sanitize/readme.md",
+    "node_modules/decode-named-character-reference/readme.md",
+    "node_modules/html-void-elements/readme.md",
+    "node_modules/mdast-util-from-markdown/readme.md",
+    "node_modules/extend/README.md",
+    "node_modules/dequal/readme.md",
+    "node_modules/character-entities/readme.md",
+    "node_modules/extend/CHANGELOG.md",
+    "node_modules/mdast-util-to-string/readme.md",
+    "node_modules/kind-of/README.md",
+    "node_modules/hast-util-whitespace/readme.md",
+    "node_modules/mdast-util-phrasing/readme.md",
+    "node_modules/micromark-factory-destination/readme.md",
+    "node_modules/devlop/readme.md",
+    "node_modules/@types/unist/README.md"
+  ]
+}
