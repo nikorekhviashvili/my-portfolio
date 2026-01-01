@@ -12,9 +12,8 @@ export default function Subscribe() {
     setStatus('loading');
 
     try {
-      // TODO: Replace YOUR_USERNAME with your Buttondown username
       const response = await fetch(
-        'https://buttondown.email/api/emails/embed-subscribe/YOUR_USERNAME',
+        'https://buttondown.email/api/emails/embed-subscribe/rekhviashvili',
         {
           method: 'POST',
           headers: {

@@ -15,13 +15,7 @@
 ### Phase 3: Email Subscription
 - Subscribe component created at `/src/components/subscribe/index.jsx`
 - Displayed on `/writing` page
-
----
-
-## ⚠️ Needs Configuration
-
-### Buttondown Setup
-Replace `YOUR_USERNAME` in `/src/components/subscribe/index.jsx:17` with actual Buttondown username.
+- Buttondown username configured: `rekhviashvili`
 
 ---
 
