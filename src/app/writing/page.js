@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { getAllPosts, isBlogEnabled } from '../../lib/blog';
-import { notFound } from 'next/navigation';
+import { getAllPosts } from '../../lib/blog';
 import styles from './writing.module.css';
 import Subscribe from '../../components/subscribe';
 
@@ -10,11 +9,6 @@ export const metadata = {
 };
 
 export default function WritingPage() {
-  // Hide in production
-  if (!isBlogEnabled()) {
-    notFound();
-  }
-
   const posts = getAllPosts();
 
   return (
