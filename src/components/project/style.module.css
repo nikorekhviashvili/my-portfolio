@@ -62,6 +62,7 @@
 
     .project {
         padding: 1rem;
+        padding-right: 2.5rem;
         flex-direction: column;
         align-items: flex-start;
         border-top: none;
@@ -106,13 +107,19 @@
         right: 1rem;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 0.8rem;
         opacity: 0.6;
-        transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .expandIcon svg {
+        width: 20px;
+        height: 20px;
     }
 
     .expandIconRotated {
-        transform: translateY(-50%) rotate(180deg);
+        opacity: 1;
     }
 
     /* Accordion content */
