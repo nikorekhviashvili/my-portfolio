@@ -1,3 +1,7 @@
+.projectWrapper {
+    width: 100%;
+}
+
 .project{
     display: flex;
     width: 100%;
@@ -46,11 +50,30 @@
     font-size: 1.1rem;
 }
 
+/* Mobile accordion styles */
 @media (max-width: 768px) {
+    .projectWrapper {
+        border-top: 1px solid rgba(14, 56, 177, 0.2);
+    }
+
+    .projectWrapper:last-of-type {
+        border-bottom: 1px solid rgba(14, 56, 177, 0.2);
+    }
+
     .project {
         padding: 1rem;
         flex-direction: column;
         align-items: flex-start;
+        border-top: none;
+        position: relative;
+    }
+
+    .project:last-of-type {
+        border-bottom: none;
+    }
+
+    .project.expanded {
+        background-color: rgba(14, 56, 177, 0.05);
     }
 
     .projectTitle {
@@ -75,5 +98,75 @@
 
     .project:hover p {
         transform: none;
+    }
+
+    /* Expand icon */
+    .expandIcon {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.8rem;
+        opacity: 0.6;
+        transition: transform 0.3s ease;
+    }
+
+    .expandIconRotated {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* Accordion content */
+    .accordionContent {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background-color: rgba(14, 56, 177, 0.03);
+    }
+
+    .accordionOpen {
+        max-height: 400px;
+    }
+
+    .accordionInner {
+        padding: 1rem 1.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .imageContainer {
+        width: 100%;
+        max-width: 280px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(14, 56, 177, 0.15);
+    }
+
+    .projectImage {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .visitButton {
+        background-color: #0E38B1;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .visitButton:hover {
+        background-color: #0a2a8a;
+    }
+
+    .visitButton:active {
+        background-color: #081f6b;
     }
 }

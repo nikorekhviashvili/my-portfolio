@@ -48,3 +48,12 @@
 .cursorLabel{
     background-color: transparent;
 }
+
+/* Hide modal on mobile - using accordion instead */
+@media (max-width: 768px) {
+    .modalContainer,
+    .cursor,
+    .cursorLabel {
+        display: none !important;
+    }
+}

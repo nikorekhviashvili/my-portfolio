@@ -1,68 +1,105 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import styles from './style.module.css';
 
-export default function Project({index, title, description, link, onHover, headingLevel = 'h2'}) {
+export default function Project({
+    index,
+    title,
+    description,
+    link,
+    src,
+    category,
+    isExpanded,
+    onMobileExpand,
+    onHover,
+    headingLevel = 'h2'
+}) {
     const Heading = headingLevel;
-    const router = useRouter();
-    const [isActive, setIsActive] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-    
+
     // Detect mobile device on component mount
     useEffect(() => {
         const checkMobile = () => {
             setIsMobile(window.matchMedia('(max-width: 768px)').matches);
         };
-        
-        // Initial check
+
         checkMobile();
-        
-        // Listen for window resize events
         window.addEventListener('resize', checkMobile);
-        
-        // Reset isActive state
-        setIsActive(false);
-        
-        // Cleanup
+
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
-    const handleClick = () => {
-        // For mobile: double-tap behavior
+    const handleClick = (e) => {
         if (isMobile) {
-            if (isActive) {
-                window.location.href = link;
-            } else {
-                onHover(true, index);
-                setIsActive(true);
-            }
-        } 
-        // For desktop: single-click navigation
-        else {
+            // On mobile: toggle accordion
+            e.preventDefault();
+            onMobileExpand(category, index);
+        } else {
+            // Desktop: navigate directly
             window.location.href = link;
         }
     };
 
+    const handleVisitClick = (e) => {
+        // Prevent the parent click handler from firing
+        e.stopPropagation();
+        window.location.href = link;
+    };
+
     const handleMouseEnter = () => {
-        // Only trigger hover effect without affecting click behavior
-        onHover(true, index);
+        if (!isMobile) {
+            onHover(true, index);
+        }
     };
 
     const handleMouseLeave = () => {
-        onHover(false, index);
-        setIsActive(false);
+        if (!isMobile) {
+            onHover(false, index);
+        }
     };
-    
+
     return (
-        <div 
-           className={styles.project} 
-           onMouseEnter={handleMouseEnter} 
-           onMouseLeave={handleMouseLeave}
-           onClick={handleClick}
-        >
-            <Heading className={styles.projectTitle}>{title}</Heading>
-            <p>{description}</p>
+        <div className={styles.projectWrapper}>
+            <div
+                className={`${styles.project} ${isExpanded ? styles.expanded : ''}`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleClick}
+            >
+                <Heading className={styles.projectTitle}>{title}</Heading>
+                <p>{description}</p>
+                {isMobile && (
+                    <span className={`${styles.expandIcon} ${isExpanded ? styles.expandIconRotated : ''}`}>
+                        ▼
+                    </span>
+                )}
+            </div>
+
+            {/* Mobile accordion content */}
+            {isMobile && (
+                <div className={`${styles.accordionContent} ${isExpanded ? styles.accordionOpen : ''}`}>
+                    <div className={styles.accordionInner}>
+                        {src && (
+                            <div className={styles.imageContainer}>
+                                <Image
+                                    src={`/images/${src}`}
+                                    alt={title}
+                                    width={300}
+                                    height={200}
+                                    className={styles.projectImage}
+                                />
+                            </div>
+                        )}
+                        <button
+                            className={styles.visitButton}
+                            onClick={handleVisitClick}
+                        >
+                            Visit →
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
