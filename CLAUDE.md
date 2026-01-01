@@ -35,12 +35,13 @@ npm run lint
 
 ### Single-Page Structure
 
-The app uses Next.js App Router with a single main page (`src/app/page.js`) that contains all project data as in-file arrays. There are four project categories:
+The app uses Next.js App Router with a main page (`src/app/page.js`) that contains all project data as in-file arrays. There are three project categories:
 
 - `workProjects`: Professional work from The Routing Company
 - `personalProjects`: Side projects built with AI tools
 - `musicProjects`: Music releases
-- `blogArticles`: Articles (currently commented out in page.js:168-184)
+
+A separate blog system lives at `/writing` with individual post pages at `/writing/[slug]`.
 
 ### Component System
 
@@ -63,6 +64,21 @@ Modal state is managed in `page.js` with a single `modal` object:
 ```
 This state is passed to Modal and updated via `handleProjectHover` callback from Project components.
 
+### Blog System
+
+Blog posts are markdown files in `src/content/blog/` with YAML frontmatter:
+```yaml
+---
+title: Post Title
+description: Short description
+date: 2025-01-15
+image: optional-image.png
+color: "#0E38B1"
+---
+```
+
+The blog library (`src/lib/blog.js`) uses gray-matter for frontmatter parsing and remark for markdown-to-HTML conversion.
+
 ## Adding/Editing Content
 
 ### Adding Projects
@@ -82,6 +98,12 @@ This state is passed to Modal and updated via `handleProjectHover` callback from
 - Images must be in `/public/images/` directory
 - `src` field should be filename only (e.g., "project.png" not "/images/project.png")
 - Modal component handles the `/images/` prefix automatically
+
+### Adding Blog Posts
+
+1. Create a new `.md` file in `src/content/blog/` (filename becomes the URL slug)
+2. Add frontmatter with `title`, `description`, `date`, and optionally `image` and `color`
+3. Write markdown content below the frontmatter
 
 ## Styling Guidelines
 
