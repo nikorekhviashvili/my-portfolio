@@ -22,20 +22,6 @@
             }
           },
           {
-            "id": "89a3bfeba7bc48d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "src/content/blog/Hello World.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Hello World"
-            }
-          },
-          {
             "id": "1e5b9f2d778fa374",
             "type": "leaf",
             "state": {
@@ -133,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/content/blog/Hello World.md",
+                "file": "CLAUDE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Hello World"
+              "title": "Backlinks for CLAUDE"
             }
           },
           {
@@ -152,12 +138,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/content/blog/Hello World.md",
+                "file": "CLAUDE.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Hello World"
+              "title": "Outgoing links from CLAUDE"
             }
           },
           {
@@ -195,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/content/blog/Hello World.md",
+                "file": "CLAUDE.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Hello World"
+              "title": "Outline of CLAUDE"
             }
           }
         ]
@@ -222,9 +208,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "afb6521723cb0991",
+  "active": "1e5b9f2d778fa374",
   "lastOpenFiles": [
     "src/content/blog/Hello World.md",
+    "src/app/page.js.tmp.33618.1767304500647",
+    "src/app/HomeClient.jsx",
+    "src/content/blog/hello-world.md",
     "src/content/blog/template",
     "src/content/blog/template/_template.md",
     "CLAUDE.md",
@@ -237,8 +226,6 @@
     "node_modules/micromark-core-commonmark/lib/setext-underline.d.ts",
     "node_modules/micromark-core-commonmark/dev/lib/setext-underline.d.ts",
     "node_modules/micromark-core-commonmark/lib/list.d.ts",
-    "node_modules/micromark-core-commonmark/dev/lib/list.d.ts",
-    "node_modules/micromark-core-commonmark/lib/line-ending.d.ts",
     "node_modules/micromark-core-commonmark/readme.md",
     "node_modules/mdast-util-to-markdown/readme.md",
     "node_modules/mdast-util-to-hast/readme.md",
@@ -257,7 +244,6 @@
     "node_modules/hast-util-whitespace/readme.md",
     "node_modules/mdast-util-phrasing/readme.md",
     "node_modules/micromark-factory-destination/readme.md",
-    "node_modules/devlop/readme.md",
-    "node_modules/@types/unist/README.md"
+    "node_modules/devlop/readme.md"
   ]
 }

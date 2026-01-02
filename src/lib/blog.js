@@ -3,6 +3,43 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import { visit } from 'unist-util-visit';
+
+/**
+ * Custom remark plugin to transform image paths for the blog.
+ * Handles various Obsidian path formats and normalizes them to /images/filename
+ * 
+ * Transforms:
+ * - ../../../public/images/photo.webp → /images/photo.webp
+ * - public/images/photo.webp → /images/photo.webp
+ * - ./public/images/photo.webp → /images/photo.webp
+ * - images/photo.webp → /images/photo.webp
+ * - Already correct /images/photo.webp → unchanged
+ */
+function remarkImagePaths() {
+  return (tree) => {
+    visit(tree, 'image', (node) => {
+      if (node.url) {
+        // Skip external URLs
+        if (node.url.startsWith('http://') || node.url.startsWith('https://')) {
+          return;
+        }
+
+        // Extract just the filename from any path structure
+        const filename = path.basename(node.url);
+
+        // Check if the path contains 'images' folder reference or is in public/images
+        if (node.url.includes('images/') || node.url.includes('public/')) {
+          node.url = `/images/${filename}`;
+        }
+        // If it's a simple filename with image extension, assume it's in /images/
+        else if (/\.(png|jpg|jpeg|gif|webp|svg|avif)$/i.test(filename)) {
+          node.url = `/images/${filename}`;
+        }
+      }
+    });
+  };
+}
 
 const postsDirectory = path.join(process.cwd(), 'src/content/blog');
 
@@ -57,6 +94,7 @@ export async function getPostBySlug(slug) {
   const { data, content } = matter(fileContents);
 
   const processedContent = await remark()
+    .use(remarkImagePaths)  // Transform image paths first
     .use(html)
     .process(content);
   const contentHtml = processedContent.toString();

@@ -105,6 +105,26 @@ The blog library (`src/lib/blog.js`) uses gray-matter for frontmatter parsing an
 2. Add frontmatter with `title`, `description`, `date`, and optionally `image` and `color`
 3. Write markdown content below the frontmatter
 
+### Blog Images with Obsidian
+
+The blog uses a custom remark plugin (`remarkImagePaths` in `src/lib/blog.js`) that automatically transforms image paths. This allows you to use Obsidian's Image Converter plugin seamlessly.
+
+**Obsidian Image Converter Plugin Settings:**
+1. **Output folder**: Set to `public/images` (relative to vault root)
+2. **Custom imagename**: Use `{notename}-{timestamp}` for unique, organized filenames
+3. **Format**: WebP recommended for web performance
+
+**How it works:**
+- Paste/drop an image in Obsidian → Plugin converts and saves to `public/images/`
+- Plugin inserts a relative path like `![](../../../public/images/my-post-123.webp)`
+- The `remarkImagePaths` plugin automatically transforms this to `/images/my-post-123.webp`
+
+**Supported path transformations:**
+- `../../../public/images/photo.webp` → `/images/photo.webp`
+- `public/images/photo.webp` → `/images/photo.webp`
+- `images/photo.webp` → `/images/photo.webp`
+- External URLs (http/https) → unchanged
+
 ## Styling Guidelines
 
 - **Colors**: Background `#FFFFFF`, Primary text/CTAs `#0E38B1` (blue)
