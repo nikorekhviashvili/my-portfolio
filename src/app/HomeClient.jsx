@@ -76,16 +76,23 @@ const musicProjects = [
     link: "https://soundcloud.com/niko-rekhviashvili-532643644/sets/self-titled?si=ceae68cdb1b94203add12d5829662b06&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
     src: "Easter.png",
     color: "#FFD200"
+  },
+  {
+    title: "Parade",
+    description: "5 trip-hop tracks on Spotify. By me (Niko with K) and Whitmo.",
+    link: "https://parade.wtf",
+    src: "parade.png",
+    color: "#1E4B47"
   }
 ];
 
 export default function HomeClient({ latestPosts = [] }) {
-  const [modal, setModal] = useState({active: false, index: 0, category: '', projects: []});
+  const [modal, setModal] = useState({ active: false, index: 0, category: '', projects: [] });
   // Mobile accordion state: tracks which project is expanded (category-index format)
   const [mobileExpanded, setMobileExpanded] = useState(null);
 
   const handleProjectHover = (active, index, category, projects) => {
-    setModal({active, index, category, projects});
+    setModal({ active, index, category, projects });
   };
 
   const handleMobileExpand = (category, index) => {
@@ -201,7 +208,7 @@ export default function HomeClient({ latestPosts = [] }) {
           <p>Get in touch: <a href="mailto:niko.rekhviashvili@gmail.com">niko.rekhviashvili@gmail.com</a></p>
         </footer>
       </div>
-      <Modal modal={modal} projects={modal.projects || []}/>
+      <Modal modal={modal} projects={modal.projects || []} />
     </main>
   )
 }
