@@ -158,7 +158,7 @@
         "hideFolders": false
       }
     ],
-    "selectedLinkFormatPreset": "Default (Wikilink, Shortest)"
+    "selectedLinkFormatPreset": "Markdown, Relative"
   },
   "nonDestructiveResizeSettings": {
     "resizePresets": [

@@ -8,7 +8,7 @@ import { visit } from 'unist-util-visit';
 /**
  * Custom remark plugin to transform image paths for the blog.
  * Handles various Obsidian path formats and normalizes them to /images/filename
- * 
+ *
  * Transforms:
  * - ../../../public/images/photo.webp → /images/photo.webp
  * - public/images/photo.webp → /images/photo.webp
@@ -63,8 +63,6 @@ export function getAllPosts() {
         title: data.title || slug,
         description: data.description || '',
         date: data.date ? (data.date instanceof Date ? data.date.toISOString().split('T')[0] : data.date) : '',
-        image: data.image || null,
-        color: data.color || '#0E38B1',
       };
     });
 
@@ -104,8 +102,6 @@ export async function getPostBySlug(slug) {
     title: data.title || slug,
     description: data.description || '',
     date: data.date ? (data.date instanceof Date ? data.date.toISOString().split('T')[0] : data.date) : '',
-    image: data.image || null,
-    color: data.color || '#0E38B1',
     content: contentHtml,
   };
 }

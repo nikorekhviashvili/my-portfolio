@@ -8,4 +8,4 @@ Interesting use-cases of AI in the PM world.
 ### CC & Obsidian
 Using CC in Obsidian. 
 - Comments - Intern for your writing needs
-- 
+- Generally how I use CC in Obsidian?
