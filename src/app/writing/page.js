@@ -27,7 +27,7 @@ export default function WritingPage() {
             {posts.map((post) => (
               <Link
                 key={post.slug}
-                href={`/writing/${post.slug}`}
+                href={`/writing/${encodeURIComponent(post.slug)}`}
                 className={styles.postItem}
               >
                 <article>

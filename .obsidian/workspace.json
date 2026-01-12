@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/drafts/How me and my partner-in-crime built this blog.md",
+                "file": "src/content/blog/How my partner-in-crime and I built this blog(sidian).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "How me and my partner-in-crime built this blog"
+              "title": "How my partner-in-crime and I built this blog(sidian)"
             }
           },
           {
@@ -197,10 +197,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "3f71a72eb8143a88",
+  "active": "afb6521723cb0991",
   "lastOpenFiles": [
-    "src/content/blog/drafts/How me and my partner-in-crime built this blog 1.md",
-    "src/content/blog/drafts/How me and my partner-in-crime built this blog.md",
+    "src/content/blog/drafts/OLD How me and my partner-in-crime built this blog.md",
+    "src/content/blog/How my partner-in-crime and I built this blog(sidian).md",
+    "public/images/How me and my partner-in-crime built this blog-1767955222356.webp",
+    "src/lib/blog.js.tmp.97661.1767647236053",
     "CLAUDE.md",
     "public/images/hello-world-1767473420855.webp",
     "src/content/blog/template/_template.md",
@@ -219,7 +221,6 @@
     "node_modules/micromark-core-commonmark/lib/thematic-break.d.ts",
     "node_modules/micromark-core-commonmark/dev/lib/thematic-break.d.ts",
     "node_modules/micromark-core-commonmark/lib/setext-underline.d.ts",
-    "node_modules/micromark-core-commonmark/dev/lib/setext-underline.d.ts",
     "node_modules/micromark-core-commonmark/readme.md",
     "node_modules/mdast-util-to-markdown/readme.md",
     "node_modules/mdast-util-to-hast/readme.md",
@@ -237,7 +238,6 @@
     "node_modules/kind-of/README.md",
     "node_modules/hast-util-whitespace/readme.md",
     "node_modules/mdast-util-phrasing/readme.md",
-    "node_modules/micromark-factory-destination/readme.md",
-    "node_modules/devlop/readme.md"
+    "node_modules/micromark-factory-destination/readme.md"
   ]
 }

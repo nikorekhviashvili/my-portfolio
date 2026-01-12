@@ -42,19 +42,31 @@ function remarkImagePaths() {
 }
 
 const postsDirectory = path.join(process.cwd(), 'src/content/blog');
+const draftsDirectory = path.join(postsDirectory, 'drafts');
 
-export function getAllPosts() {
-  // Check if directory exists
-  if (!fs.existsSync(postsDirectory)) {
+// Check if drafts should be visible (dev/preview only, not production)
+function includeDrafts() {
+  if (process.env.NODE_ENV === 'development') {
+    return true;
+  }
+  if (process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production') {
+    return true;
+  }
+  return false;
+}
+
+// Get posts from a directory
+function getPostsFromDirectory(directory, isDraft = false) {
+  if (!fs.existsSync(directory)) {
     return [];
   }
 
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPosts = fileNames
+  const fileNames = fs.readdirSync(directory);
+  return fileNames
     .filter(fileName => fileName.endsWith('.md'))
     .map(fileName => {
       const slug = fileName.replace(/\.md$/, '');
-      const fullPath = path.join(postsDirectory, fileName);
+      const fullPath = path.join(directory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data } = matter(fileContents);
 
@@ -63,26 +75,61 @@ export function getAllPosts() {
         title: data.title || slug,
         description: data.description || '',
         date: data.date ? (data.date instanceof Date ? data.date.toISOString().split('T')[0] : data.date) : '',
+        isDraft,
       };
     });
+}
+
+export function getAllPosts() {
+  // Get published posts from main directory
+  const publishedPosts = getPostsFromDirectory(postsDirectory, false);
+
+  // Get drafts if in dev/preview
+  const draftPosts = includeDrafts() ? getPostsFromDirectory(draftsDirectory, true) : [];
+
+  const allPosts = [...publishedPosts, ...draftPosts];
 
   // Sort by date descending
   return allPosts.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
 export function getAllPostSlugs() {
-  if (!fs.existsSync(postsDirectory)) {
-    return [];
+  const slugs = [];
+
+  // Get published post slugs
+  if (fs.existsSync(postsDirectory)) {
+    const publishedFiles = fs.readdirSync(postsDirectory);
+    publishedFiles
+      .filter(fileName => fileName.endsWith('.md'))
+      .forEach(fileName => slugs.push(fileName.replace(/\.md$/, '')));
   }
 
-  const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames
-    .filter(fileName => fileName.endsWith('.md'))
-    .map(fileName => fileName.replace(/\.md$/, ''));
+  // Get draft slugs if in dev/preview
+  if (includeDrafts() && fs.existsSync(draftsDirectory)) {
+    const draftFiles = fs.readdirSync(draftsDirectory);
+    draftFiles
+      .filter(fileName => fileName.endsWith('.md'))
+      .forEach(fileName => slugs.push(fileName.replace(/\.md$/, '')));
+  }
+
+  return slugs;
 }
 
 export async function getPostBySlug(slug) {
-  const fullPath = path.join(postsDirectory, `${slug}.md`);
+  // Check published posts first
+  let fullPath = path.join(postsDirectory, `${slug}.md`);
+  let isDraft = false;
+
+  // If not found in published, check drafts (if allowed)
+  if (!fs.existsSync(fullPath)) {
+    if (includeDrafts()) {
+      const draftPath = path.join(draftsDirectory, `${slug}.md`);
+      if (fs.existsSync(draftPath)) {
+        fullPath = draftPath;
+        isDraft = true;
+      }
+    }
+  }
 
   if (!fs.existsSync(fullPath)) {
     return null;
@@ -103,6 +150,7 @@ export async function getPostBySlug(slug) {
     description: data.description || '',
     date: data.date ? (data.date instanceof Date ? data.date.toISOString().split('T')[0] : data.date) : '',
     content: contentHtml,
+    isDraft,
   };
 }
 
