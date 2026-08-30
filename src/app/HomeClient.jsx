@@ -46,6 +46,20 @@ const workProjects = [
 // Personal projects
 const personalProjects = [
   {
+    title: "Sous Chef",
+    description: "Recipe app with an AI sous-chef. Ask for changes, get a rewritten recipe, keep the original.",
+    link: "https://apps.apple.com/us/app/sous-chef-recipe-assistant/id6775589134",
+    src: "souschef.png",
+    color: "#EEF1F9"
+  },
+  {
+    title: "Sous Chef MCP",
+    description: "Add and update recipes in your library from the AI of your choice - ChatGPT, Claude, and more.",
+    link: "https://mysouschef.app/mcp",
+    src: "souschef-mcp.png",
+    color: "#1B3BC4"
+  },
+  {
     title: "mm food",
     description: "Tiny, cute app for analysing restaurant menus for dietary restrictions using AI.",
     link: "https://mmfood.app",
