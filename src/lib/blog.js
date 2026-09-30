@@ -140,7 +140,7 @@ export async function getPostBySlug(slug) {
 
   const processedContent = await remark()
     .use(remarkImagePaths)  // Transform image paths first
-    .use(html)
+    .use(html, { sanitize: false })  // Posts are our own files; allow inline <video>
     .process(content);
   const contentHtml = processedContent.toString();
 

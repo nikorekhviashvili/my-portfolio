@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getAllPostSlugs, getPostBySlug } from '../../../lib/blog';
 import styles from './post.module.css';
 import Subscribe from '../../../components/subscribe';
+import PostContent from '../../../components/post-content';
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
@@ -42,10 +43,7 @@ export default async function PostPage({ params }) {
           )}
         </header>
 
-        <div
-          className={styles.content}
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        <PostContent className={styles.content} html={post.content} />
 
         <footer className={styles.footer}>
           <Subscribe />
