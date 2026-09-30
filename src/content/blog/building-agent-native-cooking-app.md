@@ -66,3 +66,5 @@ The thing that didn't work - generating images for recipes is bad bad bad. I don
 ### Bye?
 
 The app is still free. Hopefully this doesn't go super viral, so that I don't go bankrupt soon.
+
+[Here is the link again.](https://apps.apple.com/us/app/sous-chef-recipe-assistant/id6775589134)
