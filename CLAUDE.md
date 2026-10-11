@@ -20,7 +20,21 @@ npm start
 
 # Run linter
 npm run lint
+
+# Playwright smoke suite (desktop + phone); starts the dev server itself
+npm run test:e2e
+
+# Same, recording a video of every test (for proving a change)
+npm run test:e2e:prove
 ```
+
+## Testing and previews
+
+- `e2e/` holds the Playwright smoke suite: section headings, the desktop hover modal, the phone tap-to-expand card, and `/writing` through to a post. Config is `playwright.config.js`.
+- Set `BASE_URL` to run the suite against a deployed URL instead of the local server, e.g. a Vercel preview. When `VERCEL_AUTOMATION_BYPASS_SECRET` is set, requests send `x-vercel-protection-bypass` so they get through Deployment Protection.
+- Screenshots are always kept; videos only on failure unless `PW_VIDEO=on`. `PW_OUTPUT_DIR` changes where they land (default `test-results/`).
+- GitHub Actions (`.github/workflows/ci.yml`) runs lint, build and the smoke suite against the production build on every PR, and uploads the Playwright report as an artifact.
+- In Claude Code cloud sessions, `.claude/hooks/session-start.sh` runs `npm ci` whenever `package-lock.json` changed since the last install. It does nothing locally.
 
 ## Technology Stack
 
@@ -46,7 +60,7 @@ A separate blog system lives at `/writing` with individual post pages at `/writi
 ### Component System
 
 **Project Component** (`src/components/project/index.jsx`):
-- Handles both desktop (hover) and mobile (double-tap) interactions
+- Handles both desktop (hover) and mobile (tap-to-expand accordion) interactions
 - Triggers modal visibility via `onHover` callback
 - Uses dynamic heading levels for semantic HTML
 
@@ -143,7 +157,7 @@ Site metadata is in `src/app/layout.js` with OpenGraph and Twitter card support:
 
 The Project component includes mobile detection via `matchMedia('(max-width: 768px)')`:
 - Desktop: Single click navigates, hover shows modal
-- Mobile: First tap shows modal, second tap navigates
+- Mobile: Tap expands an accordion card with the image and a visit button (tap again to close); only the visit button navigates
 
 ## Animation Details
 
