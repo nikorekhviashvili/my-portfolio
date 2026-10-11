@@ -22,7 +22,8 @@ module.exports = defineConfig({
     screenshot: 'on',
     // PW_VIDEO=on records every test, for proving a change; otherwise only failures keep one.
     video: process.env.PW_VIDEO === 'on' ? 'on' : 'retain-on-failure',
-    trace: 'retain-on-failure',
+    // Traces record request headers, so they would capture the bypass secret.
+    trace: bypassSecret ? 'off' : 'retain-on-failure',
   },
   projects: [
     { name: 'desktop', use: { ...devices['Desktop Chrome'] } },
