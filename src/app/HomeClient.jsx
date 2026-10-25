@@ -44,7 +44,7 @@ const workProjects = [
   },
   {
     title: "Thirsty Tags",
-    description: "Creative strategy for a viral campaign for a water utility brand that answered every angry post with a video from the repair site. 17 international awards.",
+    description: "Creative strategy for a viral campaign for a utility brand. Won 17 international awards.",
     link: "https://www.youtube.com/watch?v=J4FgdCWT9F8",
     src: "thirsty-tags.webp",
     color: "#0A2540"
