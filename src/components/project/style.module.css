@@ -40,10 +40,12 @@
     margin: 0;
     font-weight: 500;
     transition: all 0.4s;
+    flex-shrink: 0;
 }
 
 .project p{
     transition: all 0.4s;
+    margin-left: 2rem;
     font-weight: 300;
     color: var(--color-text-secondary);
     font-size: 1.1rem;
@@ -85,6 +87,7 @@
     .project p {
         font-size: 1rem;
         padding-left: 1rem;
+        margin-left: 0;
         opacity: 1;
     }
 

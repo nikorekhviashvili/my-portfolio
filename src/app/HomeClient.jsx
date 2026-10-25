@@ -41,6 +41,27 @@ const workProjects = [
     link: "https://apps.apple.com/us/app/ride-bounce/id6740990514",
     src: "Ride Bounce.png",
     color: "#15D602"
+  },
+  {
+    title: "Thirsty Tags",
+    description: "Creative strategy for a viral campaign for a water utility brand that answered every angry post with a video from the repair site. 17 international awards.",
+    link: "https://www.youtube.com/watch?v=J4FgdCWT9F8",
+    src: "thirsty-tags.webp",
+    color: "#0A2540"
+  },
+  {
+    title: "TBC Wallet",
+    description: "Georgia's first mobile NFC payments app. Pay with your phone, years before Google Pay arrived in Georgia.",
+    link: "https://play.google.com/store/apps/details?id=com.icomvision.bsc.tbc&hl=en",
+    src: "tbc-wallet.webp",
+    color: "#171B36"
+  },
+  {
+    title: "Ti Bot",
+    description: "Georgia's first Georgian-speaking chatbot that went viral on Facebook Messenger.",
+    link: "https://www.facebook.com/TBCTIbot",
+    src: "ti-bot.webp",
+    color: "#28BDF5"
   }
 ];
 // Personal projects
