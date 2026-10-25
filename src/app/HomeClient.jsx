@@ -57,7 +57,7 @@ const personalProjects = [
     description: "Add and update recipes in your library from the AI of your choice - ChatGPT, Claude, and more.",
     link: "https://mysouschef.app/mcp",
     src: "souschef-mcp.png",
-    color: "#1B3BC4"
+    color: "#EEF1F9"
   },
   {
     title: "mm food",
@@ -120,12 +120,12 @@ export default function HomeClient({ latestPosts = [] }) {
       <div className={styles.container}>
         <header className={styles.header}>
           <h1>Niko Rekhviashvili</h1>
-          <p className={styles.sectionSubtitle}>Amsterdam based Product Manager. In the evenings, I enjoy building tiny apps or creating music.</p>
+          <p className={styles.sectionSubtitle}>Amsterdam based Senior Product Manager at DeepL. In the evenings, I enjoy building tiny apps or creating music.</p>
         </header>
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Work</h2>
-          <p className={styles.sectionSubtitle}>These are some of the highlighted projects I&apos;ve worked on in my career. Mostly from my current role at The Routing Company as a head of product. </p>
+          <p className={styles.sectionSubtitle}>These are some of the highlighted projects I&apos;ve worked on in my career.</p>
           <div className={styles.projectList}>
             {workProjects.map((project, index) => (
               <Project
